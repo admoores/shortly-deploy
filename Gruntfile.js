@@ -51,6 +51,7 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
+        command: 'git push live master'
       }
     },
   });
@@ -71,6 +72,8 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
+
+  grunt.registerTask('push', ['shell:prodServer']);
 
   grunt.registerTask('test', [
     'mochaTest'
